@@ -1,0 +1,118 @@
+@mixin fluid-type($properties, $min-screen, $max-screen, $min-value, $max-value) {
+    & {
+        @each $property in $properties {
+            #{$property}: $min-value;
+        }
+        @media screen and (min-width: $min-screen) {
+            @each $property in $properties {
+                #{$property}: calc-interpolation($min-screen, $min-value, $max-screen, $max-value);
+            }
+        }
+        @media screen and (min-width: $max-screen) {
+            @each $property in $properties {
+                #{$property}: $max-value;
+            }
+        }
+    }
+} // Requires the calc-interpolation function which can also be used independently
+@function calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
+    $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+    $b: $min-value - $a * $min-screen;
+    $sign: "+";
+    @if ($b < 0) {
+        $sign: "-";
+        $b: abs($b);
+    }
+    @return calc(#{$a*100}vw #{$sign} #{$b});
+}
+
+// Modular Typograhy Factors
+$mod_min: 1.067;
+$mod_max: 1.333;
+$mod_base: 1rem;
+$viewport-min: 24rem;
+$viewport-max: 75rem;
+// Calculate Modular Scale
+// You don't need to calculate this with Sass 
+// You can use values from http://type-scale.com/
+// Or random values :)
+$h1-min: $mod_min * $mod_min * $mod_min * $mod_min * $mod_base;
+$h1-max: $mod_max * $mod_max * $mod_max * $mod_max * $mod_base;
+$h2-min: $mod_min * $mod_min * $mod_min * $mod_base;
+$h2-max: $mod_max * $mod_max * $mod_max * $mod_base;
+$h3-min: $mod_min * $mod_min * $mod_base;
+$h3-max: $mod_max * $mod_max * $mod_base;
+$h4-min: $mod_min * $mod_base;
+$h4-max: $mod_max * $mod_base;
+$h5-min: $mod_min * $mod_base;
+$h5-max: $mod_max * $mod_base;
+$h6-min: ($mod_base / $mod_min);
+$h6-max: ($mod_base / $mod_max);
+
+$font-size-min: $mod_min * $mod_base;
+$font-size-max: $mod_max * $mod_base;
+
+// Apply fluid type mixin
+.mod-scale-fluid {
+    @include fluid-type(font-size, $viewport-min, $viewport-max, $font-size-min, $font-size-max);
+
+    h1 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h1-min, $h1-max);
+    }
+    h2 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h2-min, $h2-max);
+    }
+    h3 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h3-min, $h3-max);
+    }
+    h4 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h4-min, $h4-max);
+    }
+    h5 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h5-min, $h5-max);
+    }
+    h6 {
+        @include fluid-type(font-size, $viewport-min, $viewport-max, $h6-min, $h6-max);
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    line-height: 1.5;
+}
+
+p {
+    margin-bottom: 0.66em;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+
+.static-type {
+    font-size: 1.067rem;
+    
+    @media screen and (min-width: $viewport-max) {
+        font-size: 1.333rem;
+    }
+    h1 {
+        font-size: 1.29616rem;
+        
+        @media screen and (min-width: $viewport-max) {
+            font-size: 3.15733rem;
+        }
+    }
+    h2 {
+        font-size: 1.21477rem;
+
+        @media screen and (min-width: $viewport-max) {
+            font-size: 2.36859rem;
+        }
+    }
+}

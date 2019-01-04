@@ -1,0 +1,74 @@
+@import '../../styles/Type';
+.card {
+    background: #fff;
+    border-radius: 0.5em;
+    box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.15);
+    .card__title,
+    .card__desc,
+    .card__button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .card__title {
+        padding-top: 0.33em;
+        padding-bottom: 0.33em;
+        text-transform: capitalize;
+    }
+    img.card__pic {
+        width: 100%;
+    }
+    figure.card__pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    .card__button {
+        padding: 0.33em 0.8em;
+        border: none;
+        margin: 0 1rem 1em 1rem;
+        border-radius: 1em;
+        font-size: 1em;
+        color: #fff;
+        background: #444;
+        box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.1);
+    }
+}
+
+.card--normal {
+    .card__pic {
+        margin: 0 0 1em 0;
+    }
+    figure.card__pic {
+        @include fluid-type('max-height', $viewport-min, $viewport-max, 4rem, 20rem);
+    }
+}
+
+.card--wide {
+    display: grid;
+    grid-template: [title] minmax(1em, 2fr) [desc] minmax(3em, 9fr) [button] 3em / [pic] 2fr [text] 3fr;
+    .card__pic {
+        grid-row: title / span all;
+        grid-column: pic 1 / span 1;
+    }
+    figure.card__pic {
+        margin: 0;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .card__title {
+        grid-row: title / span 1;
+        grid-column: text / span 1;
+    }
+    .card__desc {
+        grid-row: desc / span 1;
+        grid-column: text / span 1;
+    }
+    .card__button {
+        grid-row: button / span 1;
+        grid-column: text / span 1;
+    }
+}

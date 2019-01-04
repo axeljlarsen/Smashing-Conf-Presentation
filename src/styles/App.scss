@@ -1,0 +1,111 @@
+@import 'Type';
+$c-white: #fff;
+$c-silver: #eee;
+$c-trans-silver: rgba(0, 0, 0, 0.065);
+$c-char: #333;
+$c-pri: #00A7B2;
+$c-sec: #FF7C22;
+$c-ter: #B2500C;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding: 0;
+    color: $c-char;
+    color: rgba(0, 0, 0, 0.83);
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+code {
+    overflow: auto;
+    display: block;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 0.0625rem solid $c-trans-silver;
+    text-align: center;
+    background: $c-silver;
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10em;
+        padding: 1em;
+        color: inherit;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+    @include fluid-type(padding, $viewport-min, $viewport-max, 6.5rem, 5rem);
+    &:nth-child(2n - 1) {
+        background-color: $c-silver;
+    }
+}
+
+.badge {
+    color: rgba(0, 0, 0, 0.3);
+    background-color: $c-trans-silver;
+    padding: 0.5em 0.75em;
+    border-radius: 1em;
+    display: inline-block;
+}
+
+a.badge {
+    color: $c-white;
+    background-color: $c-pri;
+}
+
+.row {
+    //NO GRID SUPPORT    
+    display: flex;
+    flex-wrap: wrap; 
+
+    //GRID SUPPORT
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+    grid-gap: 1em;
+    padding: 1em;
+    margin: 0;
+}
+
+.sect-fluid-type-demo {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Utils */
+
+.bg-silver {
+    background-color: $c-silver;
+}
+
+.p-2 {
+    padding: 2rem;
+}
