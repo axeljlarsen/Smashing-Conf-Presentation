@@ -1,3 +1,12 @@
+
+$c-white: #fff;
+$c-silver: #eee;
+$c-trans-silver: rgba(0, 0, 0, 0.065);
+$c-char: #333;
+$c-pri: #00A7B2;
+$c-sec: #FF7C22;
+$c-ter: #B2500C;
+
 @mixin fluid-type($properties, $min-screen, $max-screen, $min-value, $max-value) {
     & {
         @each $property in $properties {
@@ -26,12 +35,19 @@
     @return calc(#{$a*100}vw #{$sign} #{$b});
 }
 
+// Screen Breakpoints
+$scr-xs: 12rem;
+$scr-sm: 24rem;
+$scr-md: 36rem;
+$scr-lg: 48rem;
+$scr-xl: 72rem;
+
 // Modular Typograhy Factors
 $mod_min: 1.067;
 $mod_max: 1.333;
 $mod_base: 1rem;
-$viewport-min: 24rem;
-$viewport-max: 75rem;
+$viewport-min: $scr-sm;
+$viewport-max: $scr-xl;
 // Calculate Modular Scale
 // You don't need to calculate this with Sass 
 // You can use values from http://type-scale.com/
@@ -53,7 +69,7 @@ $font-size-min: $mod_min * $mod_base;
 $font-size-max: $mod_max * $mod_base;
 
 // Apply fluid type mixin
-.mod-scale-fluid {
+@mixin mod-scale-fluid() {
     @include fluid-type(font-size, $viewport-min, $viewport-max, $font-size-min, $font-size-max);
 
     h1 {
@@ -75,6 +91,49 @@ $font-size-max: $mod_max * $mod_base;
         @include fluid-type(font-size, $viewport-min, $viewport-max, $h6-min, $h6-max);
     }
 }
+.mod-scale-fluid, // 1
+.static-type .mod-scale-fluid, //2
+.mod-scale-fluid .static-type .mod-scale-fluid, //3
+.static-type .mod-scale-fluid .static-type .mod-scale-fluid, //4
+{
+    @include mod-scale-fluid();
+}
+
+.static-type, //1
+.mod-scale-fluid .static-type, //2
+.static-type .mod-scale-fluid .static-type, //3
+{
+    // the font-sizes here precisely match mod-scale-fluid
+    // at the respective breakpoints.
+    
+    font-size: 1.067rem; 
+    @media screen and (min-width: $scr-md) {
+        font-size: 1.16rem;
+    }
+    @media screen and (min-width: $viewport-max) {
+        font-size: 1.333rem;
+    }
+    h1 {
+        font-size: 1.29616rem;
+        @media screen and (min-width: $scr-md) {
+            font-size: 2.4rem;
+        }
+        
+        @media screen and (min-width: $viewport-max) {
+            font-size: 3.15733rem;
+        }
+    }
+    h2 {
+        font-size: 1.21477rem;
+
+        @media screen and (min-width: $scr-md) {
+            font-size: 1.8rem;
+        }
+        @media screen and (min-width: $viewport-max) {
+            font-size: 2.36859rem;
+        }
+    }
+}
 
 h1,
 h2,
@@ -90,29 +149,5 @@ p {
     margin-bottom: 0.66em;
     &:last-child {
         margin-bottom: 0;
-    }
-}
-
-
-
-.static-type {
-    font-size: 1.067rem;
-    
-    @media screen and (min-width: $viewport-max) {
-        font-size: 1.333rem;
-    }
-    h1 {
-        font-size: 1.29616rem;
-        
-        @media screen and (min-width: $viewport-max) {
-            font-size: 3.15733rem;
-        }
-    }
-    h2 {
-        font-size: 1.21477rem;
-
-        @media screen and (min-width: $viewport-max) {
-            font-size: 2.36859rem;
-        }
     }
 }

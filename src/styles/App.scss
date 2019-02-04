@@ -1,11 +1,4 @@
 @import 'Type';
-$c-white: #fff;
-$c-silver: #eee;
-$c-trans-silver: rgba(0, 0, 0, 0.065);
-$c-char: #333;
-$c-pri: #00A7B2;
-$c-sec: #FF7C22;
-$c-ter: #B2500C;
 * {
     box-sizing: border-box;
     padding: 0;
@@ -36,6 +29,16 @@ code {
     display: block;
 }
 
+header a,
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10em;
+    padding: 1em;
+    color: inherit;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -47,14 +50,13 @@ header {
     border-bottom: 0.0625rem solid $c-trans-silver;
     text-align: center;
     background: $c-silver;
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 10em;
-        padding: 1em;
-        color: inherit;
-    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: -2.5em;
+    background: #eee;
 }
 
 section {
@@ -67,6 +69,11 @@ section {
     &:nth-child(2n - 1) {
         background-color: $c-silver;
     }
+}
+
+hr {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .badge {
@@ -83,6 +90,8 @@ a.badge {
 }
 
 .row {
+    $gap: 1em;
+
     //NO GRID SUPPORT    
     display: flex;
     flex-wrap: wrap; 
@@ -90,22 +99,97 @@ a.badge {
     //GRID SUPPORT
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-    grid-gap: 1em;
-    padding: 1em;
-    margin: 0;
+    grid-gap: $gap;
+    grid-auto-flow: dense;
+    padding: $gap;
+    width: 100%;
 }
 
+.row.static-type {
+    @media screen and (max-width: 35.125em) {
+    //max-width: 15em;
+    //margin: auto;
+    }
+}
 .sect-fluid-type-demo {
     padding-left: 0;
     padding-right: 0;
 }
 
-/* Utils */
+/* Demo Filter */
+.demo-filter {
+    position: fixed;
+    bottom: calc(50vw - 14em);
+    left: 100vw;    
+    max-height: 14em;
+    padding: 1em;
+    overflow: auto;
+    color: rgba(0, 0, 0, 0.72);
+    background: $c-pri;
+    list-style: none;
+    transition: right 0.33s;
+    transform: translateX(- 2em);
+    white-space: nowrap;
 
+    &:hover {
+        transform: translateX(calc(-100%));
+    }
+    >li {
+        margin-bottom: 0.4em;
+        text-transform: uppercase;
+    }
+    label {
+        cursor: pointer;
+    }
+}
+
+
+
+/* Misc */
+.primary-box {
+    background: $c-pri;
+    color: $c-white;
+    min-width: 100px;
+    min-height: 100px;
+    margin: 0;
+}
+
+/* Themes */
+.theme {
+    background: var(--primary);
+    color: var(--primary-neg);
+}
+.theme-1 {
+    --primary: hsl(30,25%,30%);
+    --primary-neg: hsl(30,25%,10%);
+}
+.theme-2 {
+    --primary: hsl(75,25%,30%);
+    --primary-neg: hsl(75,25%,64%);
+}
+.theme-3 {
+    --primary: hsl(210, 25%, 30%);
+    --primary-neg: hsl(210, 25%, 64%);
+}
+
+/* Utils */
+.hide,.d-none {
+    display: none;
+}
 .bg-silver {
     background-color: $c-silver;
 }
 
 .p-2 {
     padding: 2rem;
+}
+
+.cover {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;    
+}
+
+.font-75 {
+    font-size: 75%;
 }

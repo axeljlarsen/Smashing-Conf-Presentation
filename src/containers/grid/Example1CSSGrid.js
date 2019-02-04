@@ -1,33 +1,14 @@
 import React, { Component } from "react";
 import bgsm from '../../assets/img/square-image.jpg';
 import bglg from '../../assets/img/large-image.jpg';
+import './Grids.scss';
+import './GridLayering.scss';
+import GenericComponent from "../../components/GenericComponent";
 
-export default class Example1CSSGrid extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isLoading: true
-        };
-    }
-
-    async componentDidMount() {
-        if (!this.props.isAuthenticated) {
-            return;
-        }
-
-        try {
-
-        } catch (e) {
-            alert(e);
-        }
-
-        this.setState({ isLoading: false });
-    }
+export default class Example1CSSGrid extends GenericComponent {
 
     render() {
         return (
-
             <section className="bg-silver">
                 <div className="grid-layering">
                     <div className="cal">

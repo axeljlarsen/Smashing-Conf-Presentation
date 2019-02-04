@@ -35,7 +35,8 @@
     }
 }
 
-.card--normal {
+.card--normal,
+.card--normal--fluid {
     .card__pic {
         margin: 0 0 1em 0;
     }
@@ -44,20 +45,25 @@
     }
 }
 
+.card--normal--fluid, //1
+.static-type .card--normal--fluid, //2
+.mod-scale-fluid .static-type .card--normal--fluid, //3
+.static-type .mod-scale-fluid .static-type .card--normal--fluid //4
+{
+    @include mod-scale-fluid();
+}
+
 .card--wide {
     display: grid;
-    grid-template: [title] minmax(1em, 2fr) [desc] minmax(3em, 9fr) [button] 3em / [pic] 2fr [text] 3fr;
+    // grid-template: [title] minmax(1em, 2fr) [desc] minmax(3em, 9fr) [button] 3em / [pic] 2fr [text] 3fr;    
+    grid-template: [title] auto [desc] auto [button] auto / [pic] 2fr [text] 3fr;
+
     .card__pic {
         grid-row: title / span all;
         grid-column: pic 1 / span 1;
     }
     figure.card__pic {
         margin: 0;
-        img {
-            object-fit: cover;
-            height: 100%;
-            width: 100%;
-        }
     }
     .card__title {
         grid-row: title / span 1;
