@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CardType, AppRoutes, CSSGridSteps, CSSGridStepLabels } from '../Constants';
-import GenericComponent from "./GenericComponent";
+import GenericComponent from './GenericComponent';
 
 export default class DemoFilter extends GenericComponent {
 
@@ -19,11 +19,11 @@ export default class DemoFilter extends GenericComponent {
 
     render() {
         return (
-            <ul className="demo-filter">
-                {Object.keys(this.props.availableItems).map(item => {
-                    return <li>
+            <ul className='demo-filter'>
+                {Object.keys(this.props.availableItems).map((item,index) => {
+                    return <li key={`demo-filter-item-${ index }`}>
                                 <label>
-                                    <input type="checkbox"
+                                    <input type='checkbox'
                                         value={this.props.availableItems[item]}
                                         checked={this.props.selectedItems.includes(this.props.availableItems[item])}
                                         onChange={() => this.onFilterItemChange(this.props.availableItems[item])} />

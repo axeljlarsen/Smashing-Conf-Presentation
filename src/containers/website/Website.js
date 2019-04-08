@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import GenericComponent from "../../components/GenericComponent.js";
+import React, { Component } from 'react';
+import GenericComponent from '../../components/GenericComponent.js';
 import {Titles} from '../../Constants';
 
 export default class Website extends GenericComponent {

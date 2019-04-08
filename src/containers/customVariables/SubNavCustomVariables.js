@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { CardType, AppRoutes } from '../../Constants';
-import GenericComponent from "../../components/GenericComponent.js";
+import GenericComponent from '../../components/GenericComponent.js';
 
 export default class SubNavCustomVariables extends GenericComponent {
   

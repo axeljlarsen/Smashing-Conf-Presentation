@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import GenericComponent from "../../components/GenericComponent.js";
+import React, { Component } from 'react';
+import GenericComponent from '../../components/GenericComponent.js';
 
 export default class FastSlowWebDev extends GenericComponent {
   render() {
@@ -28,8 +28,8 @@ export default class FastSlowWebDev extends GenericComponent {
         <li>Foundations: URL, brand, nomenclature</li>
         </ol>
         <p>Using this model you can reframe the prioritization of what foundations to establish for a given project.
-           Whether you use Technology A or Technology B to satisfy a set of business requirements, the decision's impact is likely to be superficial over the lifespan of the project.
-           Alternatively, establishing nomenclature will reduce miscommunicating across teams and teammembers and increase the code's meaningfulness and consistency.
+           Whether you use Technology A or Technology B to satisfy a set of business requirements, the decision&apos;s impact is likely to be superficial over the lifespan of the project.
+           Alternatively, establishing nomenclature will reduce miscommunicating across teams and teammembers and increase the code&apos;s meaningfulness and consistency.
            Furthermore, the scope of changing which technology is used to solve a set of requirements will likely be less than the scope to a change in nomenclature.
            For example, changing a specialized term could require code changes throughout the application and changes to digital and printed marketing resources, advertisements, internal documentation and training materials, etc.  </p>
         <p></p>

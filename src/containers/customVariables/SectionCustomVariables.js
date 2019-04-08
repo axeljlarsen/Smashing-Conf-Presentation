@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import bglg from '../../assets/img/large-image.jpg';
 import bgsm from '../../assets/img/square-image.jpg';
 import { Card } from '../../components/cards/Card';
 import { CardType, AppRoutes, CSSGridSteps } from '../../Constants';
-import GenericComponent from "../../components/GenericComponent.js";
-import SubNavCustomVariables from "./SubNavCustomVariables.js";
+import GenericComponent from '../../components/GenericComponent.js';
+import SubNavCustomVariables from './SubNavCustomVariables.js';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,7 +21,7 @@ export default class SectionCustomVariables extends GenericComponent {
     return (
       <section>
         <SubNavCustomVariables />
-        <div className="row">
+        <div className="grid">
           <Card type={CardType.normal} title="Theme 1" image={theme1Pic} />
           <Card type={CardType.normal} title="Theme 2" image={theme2Pic} />
           <Card type={CardType.normal} title="Theme 3" image={theme3Pic} />

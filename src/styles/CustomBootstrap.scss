@@ -1,0 +1,24 @@
+// Override default variables before the import
+$body-bg: red;
+.bootstrap {
+    color: inherit;
+}
+.bootstrap-4 {
+    // Import Bootstrap and its default variables
+    @import '~bootstrap/scss/_functions.scss';
+    @import '~bootstrap/scss/bootstrap.scss';
+    @extend .bootstrap;
+    [class*="col-"] {
+        //border: 1px solid theme-color("primary");
+    }
+}
+.bootstrap-3 {
+    $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+    @import "~bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+    @import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+    @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+    @extend .bootstrap;
+    [class*="col-"] {
+        //border: 1px solid $brand-primary;
+    }
+}

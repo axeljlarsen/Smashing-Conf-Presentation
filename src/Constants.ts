@@ -14,6 +14,16 @@ export enum AppRoutes {
     CSSGrid = '/CSSGrid',
     CSSGridExample1 = '/CSSGrid/Example1',
     CustomVariables = '/CustomVariables',
+    UserGroup = '/UserGroup',
+    TableLayout = '/UserGroup/TableLayout',
+    FlashLayout = '/UserGroup/FlashLayout',
+    FloatLayout = '/UserGroup/FloatLayout',
+    FloatLayoutResponsive = '/UserGroup/FloatLayout/Responsive',
+    FlexBox = '/UserGroup/Flexbox',
+    CSSGrid_UG1 = '/UserGroup/CSSGrid/1',
+    CSSGrid_UG2 = '/UserGroup/CSSGrid/2',
+    CSSGrid_UG3 = '/UserGroup/CSSGrid/3',
+    CSSGrid_UG4 = '/UserGroup/CSSGrid/4',
 }
 
 export class Step {
@@ -25,14 +35,18 @@ export class Step {
     }
 }
 export class FluidTypeSteps {
-    public static One:Step = new Step('static-type','Fluid Type 1');
-    public static Two:Step = new Step('mod-scale-fluid','Fluid Type 2');
+    public static One:Step = new Step('static-type','Static Type');
+    public static Two:Step = new Step('mod-scale-fluid','Fluid Type');
 }
 export class CSSGridSteps {
     public static One:Step = new Step('grid-1','Resize Cols');
     public static Two:Step = new Step('grid-2','Position Content');
     public static Three:Step = new Step('grid-3','Resize Rows');
     public static Four:Step = new Step('grid-4','More Content');
+}
+export class CSSGridExample1Steps {
+    public static Bootstrap3:Step = new Step('bootstrap-3','Bootstrap 3');
+    public static Grid:Step = new Step('grid','Grid');
 }
 
 export class ContentTitle {

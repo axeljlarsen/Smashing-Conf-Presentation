@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class GenericComponent extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ export default class GenericComponent extends Component {
 
   render() {
     return (
-      <div className="generic_component">
+      <div className='generic_component'>
           {this.props.children}
       </div>
     );

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {Card} from '../../components/cards/Card.js';
 import bglg from '../../assets/img/large-image.jpg';
 import bgsm from '../../assets/img/square-image.jpg';
 import bgn from '../../assets/img/4by3-image.jpg';
 import { CardType, FluidTypeSteps, FluidTypeStepLabels, AppRoutes } from '../../Constants';
-import SubNavFluidType from "./SubNavFluidType.js";
-import GenericComponent from "../../components/GenericComponent.js";
-import DemoFilter from "../../components/DemoFilter";
+import SubNavFluidType from './SubNavFluidType.js';
+import GenericComponent from '../../components/GenericComponent.js';
+import DemoFilter from '../../components/DemoFilter';
 
 export default class SectionFluidType extends GenericComponent {
   constructor(props) {
@@ -136,7 +136,7 @@ export default class SectionFluidType extends GenericComponent {
         selectedItems={this.state.steps} 
         onSelect={this.onDemoFilterChange} />
         
-        <div className="row">
+        <div className="grid">
           <div className={`${FluidTypeSteps.One.cssClass} ${this.getStepUtilClass(FluidTypeSteps.One)}`}>
             <h1>Title of Some Content</h1>
             <h2>Subtitle</h2>
