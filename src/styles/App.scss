@@ -437,12 +437,12 @@ details {
         }
     }
 
-    .grid1 {        
+    .grid1 {
         grid-template-columns: repeat(auto-fill, $gridsize);
     }
 
     .grid2,
-    .grid3{
+    .grid3 {
         grid-template-columns: repeat(auto-fill, minmax($gridsize, 1fr));
     }
 
@@ -450,28 +450,47 @@ details {
     .grid4,
     .grid5,
     .grid6 {
-        grid-template-columns: $gridsize $gridsize $gridsize $gridsize;
+        grid-template-columns: repeat(4, $gridsize);
         min-height: 60vh;
-    }
-
-    .grid4,
-    .grid5,
-    .grid6 {
     }
 
     .grid4,
     .grid6 {
         align-items: end;
     }
-    
+
     .grid5,
     .grid6 {
         justify-content: end;
     }
-    
-    code, aside {
+
+    .grid7 {
+        font-size: 3em;
+        font-weight: bold;
+
+        >div {
+            display: grid;
+            place-content: center;
+
+            &:nth-child(2) {
+                grid-area: 1/1/1/4;
+            }
+
+            &:nth-child(4) {
+                grid-area: 2/3/4/4;
+            }
+        }
+    }
+
+    .grid8 {
+        grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 2fr);
+    }
+
+    code,
+    aside {
         margin-bottom: 2em;
     }
+
     .highlight {
         background: yellow;
     }
