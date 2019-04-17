@@ -25,13 +25,15 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>You can define a grid explicitly by using any combination of the following properties:</p>
+            <p>You can define a grid layout by using any combination of the following properties:</p>
             <ul>
               <li>grid-template-columns</li>
-              <li>grid-auto-columns</li>
               <li>grid-template-rows</li>
+              <li>grid-auto-columns</li>
               <li>grid-auto-rows</li>
-            </ul>
+            </ul><br/>
+            <p style={{'display':'none'}}>Properties with <strong>-auto-</strong> apply to all tracks on the specified dimension and is also affected by the grid<strong>-auto-</strong>flow property.</p>
+            <p style={{'display':'none'}}>Properties with <strong>-template-</strong> apply to the first X tracks on the specified dimension and have higher priority than its -auto- counterpart.</p>
           </aside>
           <div className="grid grid0">
             <div></div>
@@ -240,6 +242,35 @@ export default class CSSGrid2 extends GenericComponent {
             </ul>
           </aside>
           <div className="grid grid7">
+            <div><span>A</span></div>
+            <div><span>B</span></div>
+            <div><span>C</span></div>
+            <div><span>D</span></div>
+            <div><span>E</span></div>
+            <div><span>F</span></div>
+          </div>
+        </section>
+        <section>
+          <code>
+            <pre>{`.grid {
+  display: grid;
+  grid-gap: 1rem;
+}
+.grid > div {
+  `}<span className="highlight"></span>{`display: grid;
+  `}<span className="highlight2"></span>{`place-content: center;
+}
+.grid > div:nth-child(2) {
+  `}<span className="highlight3"></span>{`grid-area: 1/1/auto/4;
+}
+.grid > div:nth-child(`}<span className="highlight">3</span>{`) {
+  grid-row: span 2;
+}`}</pre>
+          </code>
+          <aside>
+            <p>Notice that when item C spans 2 block tracks (rows), the browser positions item F below item D.</p>
+          </aside>
+          <div className="grid grid10">
             <div><span>A</span></div>
             <div><span>B</span></div>
             <div><span>C</span></div>

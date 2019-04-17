@@ -22,12 +22,12 @@ export default class CSSGrid1 extends GenericComponent {
           <details>
             <summary><h2>What&apos;s it do?</h2></summary>
             <ul>
-              <li>Size layout elements</li>
-              <li>Position elements</li>
-              <li>Align elements</li>
-              <li>Justify elements</li>
-              <li>(Re)order elements</li>
-              <li>Layer elements</li>
+              <li>Size layout items</li>
+              <li>Position items</li>
+              <li>Align items</li>
+              <li>Justify items</li>
+              <li>(Re)order items</li>
+              <li>Layer items</li>
               <li>Adjust layouts using media queries and CSS functions</li>
             </ul>
           </details>

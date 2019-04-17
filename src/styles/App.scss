@@ -473,7 +473,8 @@ details {
         justify-content: end;
     }
 
-    .grid7 {
+    .grid7,
+    .grid10 {
         font-size: 3em;
         font-weight: bold;
 
@@ -485,12 +486,12 @@ details {
                 grid-area: 1/1/auto/4;
             }
 
-            &:nth-child(4) {
-                grid-row: span 2;
-            }
         }
     }
-
+    .grid7 > div:nth-child(4),
+    .grid10 > div:nth-child(3) {
+        grid-row: span 2;
+    }
     .grid8 {
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr) minmax(10rem, 2fr));
     }
