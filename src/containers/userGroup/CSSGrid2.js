@@ -24,6 +24,15 @@ export default class CSSGrid2 extends GenericComponent {
   grid-gap: 1rem;
 }`}</pre>
           </code>
+          <aside>
+            <p>You can define a grid explicitly by using any combination of the following properties:</p>
+            <ul>
+              <li>grid-template-columns</li>
+              <li>grid-auto-columns</li>
+              <li>grid-template-rows</li>
+              <li>grid-auto-rows</li>
+            </ul>
+          </aside>
           <div className="grid grid0">
             <div></div>
             <div></div>
@@ -42,8 +51,8 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>The <strong>repeat(count, size)</strong> CSS function lets you define a pattern for your grid track(s).</p>
-            <p><strong>auto-fill</strong> will fill the grid container with as many tracks as possible.</p>
+            <p>The <strong>repeat(count, size)</strong> CSS function lets you define a pattern for your grid tracks of the specified dimension.</p>
+            <p><strong>auto-fill</strong> will fill the grid container with as many tracks as possible on the specified dimension.</p>
           </aside>
           <div className="grid grid1">
             <div></div>
@@ -63,7 +72,7 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p><strong>auto-fit</strong> will fill the grid container with as many tracks as possible and then fit the tracks to the container by proportionally distributing the remaining space to each track.</p>
+            <p><strong>auto-fit</strong> will fill the grid container with as many tracks as possible and then fit the tracks to the container by proportionally distributing the remaining space to each track on the specified dimension.</p>
             <p>The <strong>fr</strong> unit stands for fraction.</p>
             <p>Tracks defined with an fr unit will proportionally take up the remaining space of the grid.</p>
           </aside>
@@ -110,7 +119,7 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>The <strong>align-items</strong> property is <strong>stretch</strong> by default. So grid items will stretch to fill the block track (row).</p>
+            <p>The <strong>align-items</strong> property is <strong>stretch</strong> by default. So grid items will stretch to fill the block dimension (row).</p>
           </aside>
           <div className="grid grid3">
             <div></div>
@@ -132,7 +141,7 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>CSS properties beginning with <strong>align-</strong> affect the <strong>block</strong> track (in English the block track is the vertical dimension/axis)</p>
+            <p>CSS properties beginning with <strong>align-</strong> affect the <strong>block</strong> dimension (in English the block dimension is the vertical axis)</p>
             <p>CSS properties ending in <strong>-items</strong> and <strong>-self</strong> affect the alignment of the <strong>item(s)</strong> within their track.</p>
           </aside>
           <div className="grid grid4">
@@ -155,7 +164,7 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>CSS properties beginning with <strong>justify-</strong> affect the <strong>inline</strong> track (in English the inline track is the horizontal dimension/axis)</p>
+            <p>CSS properties beginning with <strong>justify-</strong> affect the <strong>inline</strong> dimension (in English the inline dimension is the horizontal axis)</p>
             <p>CSS properties ending in <strong>-content</strong> affect the placement of the tracks within the grid.</p>
           </aside>
           <div className="grid grid5">
