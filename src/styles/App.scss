@@ -1,5 +1,12 @@
 @import 'Type';
 
+$respond: 900px;
+$charcoal: $c-char;
+$text: rgba(0, 0, 0, 0.83);
+$silver: silver;
+$primary: red;
+$light: white;
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,7 +22,7 @@ body {
 body {
     padding: 0;
     color: $c-char;
-    color: rgba(0, 0, 0, 0.83);
+    color: $text;
     width: 100%;
     overflow-x: hidden;
 }
@@ -221,11 +228,6 @@ a.badge {
 
 /* User Group Stuff */
 
-$respond: 900px;
-$charcoal: #292929;
-$silver: silver;
-$primary: red;
-$light: white;
 
 /*structure */
 .tablelayout {
@@ -437,11 +439,18 @@ details {
         }
     }
 
+    .grid0 {
+        grid-template-columns: 10rem 10rem 10rem 10rem;
+    }
+
     .grid1 {
         grid-template-columns: repeat(auto-fill, $gridsize);
     }
 
-    .grid2,
+    .grid2 {
+        grid-template-columns: repeat(auto-fit, minmax($gridsize, 1fr));
+    }
+
     .grid3 {
         grid-template-columns: repeat(auto-fill, minmax($gridsize, 1fr));
     }
@@ -451,7 +460,7 @@ details {
     .grid5,
     .grid6 {
         grid-template-columns: repeat(4, $gridsize);
-        min-height: 60vh;
+        min-height: 30rem;
     }
 
     .grid4,
@@ -473,17 +482,103 @@ details {
             place-content: center;
 
             &:nth-child(2) {
-                grid-area: 1/1/1/4;
+                grid-area: 1/1/auto/4;
             }
 
             &:nth-child(4) {
-                grid-area: 2/3/4/4;
+                grid-row: span 2;
             }
         }
     }
 
     .grid8 {
-        grid-template-columns: minmax(10rem, 1fr) minmax(10rem, 2fr);
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr) minmax(10rem, 2fr));
+    }
+
+    .grid9 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        > * {
+            border: none;
+        }
+        .card,
+        .card2 {
+            display: grid;
+            grid-template-columns: 6rem 1fr 6rem;
+            
+            .titles, 
+            .actions {
+                grid-column: span 2;
+            }
+            .pic-main,
+            .desc {
+                grid-column: span 3;
+            }
+            .actions-icons {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .card2 {            
+            .titles,
+            .actions-icons {
+                grid-column: 2 / span 2;
+            }
+        }
+
+        .card,
+        .card2 {
+            padding: 0.75em 0 1em 0;
+            border: none;
+            border-radius: 0.4rem;
+            background: $light;
+            box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.16);
+
+            img {
+                max-width: 100%
+            }
+
+            .pic-main,
+            .desc {
+                margin-top: 1rem;
+            }
+
+            .pic-ava,
+            .title,
+            .subtitle,
+            .desc,
+            .actions {
+                margin-left: 1rem;
+            }
+            .title,
+            .subtitle,
+            .desc,
+            .actions > *,
+            .actions-icons > * {
+                margin-right: 1rem;
+            }
+
+            .subtitle,
+            .desc {
+                color: rgba(0, 0, 0, 0.6);
+            }
+
+            .subtitle {
+                font-weight: normal;
+            }
+
+            .pic-ava {
+                $asize: 5rem;
+                max-height: $asize;
+                clip-path: circle($asize * 0.5);
+            }
+            .action-icons {
+                
+                padding-right: 1em;
+            }
+        }
+
     }
 
     code,
@@ -491,7 +586,57 @@ details {
         margin-bottom: 2em;
     }
 
+    $highlight: yellow;
+
+    .strike {
+        text-decoration: line-through;
+    }
+
     .highlight {
-        background: yellow;
+        background: $highlight;
+    }
+
+    .highlight2 {
+        background: adjust-hue($highlight, 80%);
+    }
+
+    .highlight3 {
+        background: adjust-hue($highlight, 160%);
+        color: $light;
+    }
+    .highlight4 {
+        background: adjust-hue($highlight, 240%);
+        color: $light;
+    }
+
+    .highlight-dot {
+        color: $highlight;
+
+        >* {
+            color: $text;
+        }
+    }
+
+    .highlight2-dot {
+        color: adjust-hue($highlight, 80%);
+
+        >* {
+            color: $text;
+        }
+    }
+
+    .highlight3-dot {
+        color: adjust-hue($highlight, 160%);
+
+        >* {
+            color: $text;
+        }
+    }
+    .highlight4-dot {
+        color: adjust-hue($highlight, 240%);
+
+        >* {
+            color: $text;
+        }
     }
 }

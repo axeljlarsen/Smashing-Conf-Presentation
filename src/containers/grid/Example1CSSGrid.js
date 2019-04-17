@@ -122,36 +122,36 @@ export default class Example1CSSGrid extends GenericComponent {
                         <pre>
                             <code>
                                 {`<div class="container-fluid">
-    <div class="weather-card row">
-        <div class="col-xs-12 location">`}<span className="highlight">Hong Kong</span>{`</div>
-        <div class="col-xs-12 time">`}<span className="highlight">Mon 12:30 PM Mostly Sunny</span>{`</div>
-        <div class="col-xs-8 temp">`}<span className="highlight">23<sup>° C</sup></span>{`</div>
-        <div class="col-xs-4 icon--lg">`}<span className="highlight"></span>{`</div>
-        <div class="col-xs-6 perc-wind">`}<span className="highlight">24% Precepitation</span>{`</div>
-        <div class="col-xs-6 perc-wind">`}<span className="highlight">24kmph Winds</span>{`</div>
-        <div class="col-xs-12 week">
-            <div class="row">
-                <div class="col-xs-7 day">`}<span className="highlight">Tuesday</span>{`</div>
-                <div class="col-xs-5 high-low">`}<span className="highlight">24°/12°</span>{`</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 day">`}<span className="highlight">Wednesday</span>{`</div>
-                <div class="col-xs-5 high-low">`}<span className="highlight">24°/12°</span>{`</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 day">`}<span className="highlight">Thursday</span>{`</div>
-                <div class="col-xs-5 high-low">`}<span className="highlight">24°/12°</span>{`</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 day">`}<span className="highlight">Friday</span>{`</div>
-                <div class="col-xs-5 high-low">`}<span className="highlight">24°/12°</span>{`</div>
-            </div>
-            <div class="row">
-                <div class="col-xs-7 day">`}<span className="highlight">Saturday</span>{`</div>
-                <div class="col-xs-5 high-low">`}<span className="highlight">24°/12°</span>{`</div>
-            </div>
+    <div class="weather-card`}<span className="highlight"> row</span>{`">
+        <div class="`}<span className="highlight">col-xs-12 </span>{`location">Hong Kong</div>
+        <div class="`}<span className="highlight">col-xs-12 </span>{`time">Mon 12:30 PM Mostly Sunny</div>
+        <div class="`}<span className="highlight">col-xs-8 </span>{`temp">23<sup>° C</sup></div>
+        <div class="`}<span className="highlight">col-xs-4 </span>{`icon--lg"></div>
+        <div class="`}<span className="highlight">col-xs-6 </span>{`perc-wind">24% Precepitation</div>
+        <div class="`}<span className="highlight">col-xs-6 </span>{`perc-wind">24kmph Winds</div>
+        <div class="`}<span className="highlight">col-xs-12 </span>{`week">
+          `}<span className="highlight">{`<div class="row">`}</span>{`
+                <div class="`}<span className="highlight">{`col-xs-7 `}</span>{`day">Tuesday</div>
+                <div class="`}<span className="highlight">{`col-xs-5 `}</span>{`high-low">24°/12°</div>
+          `}<span className="highlight">{`</div>`}</span>{`
+          `}<span className="highlight">{`<div class="row">`}</span>{`
+                <div class="`}<span className="highlight">{`col-xs-7 `}</span>{`day">Wednesday</div>
+                <div class="`}<span className="highlight">{`col-xs-5 `}</span>{`high-low">24°/12°</div>
+          `}<span className="highlight">{`</div>`}</span>{`
+          `}<span className="highlight">{`<div class="row">`}</span>{`
+                <div class="`}<span className="highlight">{`col-xs-7 `}</span>{`day">Thursday</div>
+                <div class="`}<span className="highlight">{`col-xs-5 `}</span>{`high-low">24°/12°</div>
+          `}<span className="highlight">{`</div>`}</span>{`
+          `}<span className="highlight">{`<div class="row">`}</span>{`
+                <div class="`}<span className="highlight">{`col-xs-7 `}</span>{`day">Friday</div>
+                <div class="`}<span className="highlight">{`col-xs-5 `}</span>{`high-low">24°/12°</div>
+          `}<span className="highlight">{`</div>`}</span>{`
+          `}<span className="highlight">{`<div class="row">`}</span>{`
+                <div class="`}<span className="highlight">{`col-xs-7 `}</span>{`day">Saturday</div>
+                <div class="`}<span className="highlight">{`col-xs-5 `}</span>{`high-low">24°/12°</div>
+          `}<span className="highlight">{`</div>`}</span>{`
         </div>
-        <div class="col-xs-12 footer">`}<span className="highlight">Collapse</span>{`</div>
+        <div class="`}<span className="highlight">{`col-xs-12 `}</span>{`footer">Collapse</div>
     </div>
 </div>`}
                             </code>
@@ -160,26 +160,26 @@ export default class Example1CSSGrid extends GenericComponent {
                     <div className={this.getStepUtilClass(CSSGridExample1Steps.Grid)}>
                         <pre>
                             <code>
-                                {`<div class="weather-card grid-example ">
-    <div class="location">`}<span className="highlight">Hong Kong</span>{`</div>
-    <div class="time">`}<span className="highlight">Mon 12:30 PM Mostly Sunny</span>{`</div>
-    <div class="temp">`}<span className="highlight">23<sup>° C</sup></span>{`</div>
-    <div class="icon--lg">`}<span className="highlight"></span>{`</div>
-    <div class="perc-wind">`}<span className="highlight">24% Precepitation</span>{`</div>
-    <div class="perc-wind">`}<span className="highlight">24kmph Winds</span>{`</div>
+                                {`<div class="weather-card">
+    <div class="location">Hong Kong</div>
+    <div class="time">Mon 12:30 PM Mostly Sunny</div>
+    <div class="temp">23<sup>° C</sup></div>
+    <div class="icon--lg"></div>
+    <div class="perc-wind">24% Precepitation</div>
+    <div class="perc-wind">24kmph Winds</div>
     <div class="week">
-        <div class="day">`}<span className="highlight">Tuesday</span>{`</div>
-        <div class="high-low">`}<span className="highlight">24°/12°</span>{`</div>
-        <div class="day">`}<span className="highlight">Wednesday</span>{`</div>
-        <div class="high-low">`}<span className="highlight">24°/12°</span>{`</div>
-        <div class="day">`}<span className="highlight">Thursday</span>{`</div>
-        <div class="high-low">`}<span className="highlight">24°/12°</span>{`</div>
-        <div class="day">`}<span className="highlight">Friday</span>{`</div>
-        <div class="high-low">`}<span className="highlight">24°/12°</span>{`</div>
-        <div class="day">`}<span className="highlight">Saturday</span>{`</div>
-        <div class="high-low">`}<span className="highlight">24°/12°</span>{`</div>
+        <div class="day">Tuesday</div>
+        <div class="high-low">24°/12°</div>
+        <div class="day">Wednesday</div>
+        <div class="high-low">24°/12°</div>
+        <div class="day">Thursday</div>
+        <div class="high-low">24°/12°</div>
+        <div class="day">Friday</div>
+        <div class="high-low">24°/12°</div>
+        <div class="day">Saturday</div>
+        <div class="high-low">24°/12°</div>
     </div>
-    <div class="footer">`}<span className="highlight">Collapse</span>{`</div>
+    <div class="footer">Collapse</div>
 </div>`}
                             </code>
                         </pre>

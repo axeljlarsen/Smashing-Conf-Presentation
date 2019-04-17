@@ -52,14 +52,14 @@ $viewport-max: $scr-xl;
 // You don't need to calculate this with Sass 
 // You can use values from http://type-scale.com/
 // Or random values :)
-$h1-min: $mod_min * $mod_min * $mod_min * $mod_min * $mod_base;
-$h1-max: $mod_max * $mod_max * $mod_max * $mod_max * $mod_base;
-$h2-min: $mod_min * $mod_min * $mod_min * $mod_base;
-$h2-max: $mod_max * $mod_max * $mod_max * $mod_base;
-$h3-min: $mod_min * $mod_min * $mod_base;
-$h3-max: $mod_max * $mod_max * $mod_base;
-$h4-min: $mod_min * $mod_base;
-$h4-max: $mod_max * $mod_base;
+$h1-min: $mod_min * $mod_min * $mod_min * $mod_min * $mod_min * $mod_base;
+$h1-max: $mod_max * $mod_max * $mod_max * $mod_max * $mod_max * $mod_base;
+$h2-min: $mod_min * $mod_min * $mod_min * $mod_min * $mod_base;
+$h2-max: $mod_max * $mod_max * $mod_max * $mod_max * $mod_base;
+$h3-min: $mod_min * $mod_min * $mod_min * $mod_base;
+$h3-max: $mod_max * $mod_max * $mod_max * $mod_base;
+$h4-min: $mod_min * $mod_min * $mod_base;
+$h4-max: $mod_max * $mod_max * $mod_base;
 $h5-min: $mod_min * $mod_base;
 $h5-max: $mod_max * $mod_base;
 $h6-min: ($mod_base / $mod_min);

@@ -2,7 +2,7 @@
 /* Grid Structural Styles*/
 .grid-code {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(10rem,1fr));
     width: 100%;
     > * {
         border: 0.1rem solid rgba(0,0,0,0.1);

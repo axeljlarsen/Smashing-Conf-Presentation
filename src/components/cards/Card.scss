@@ -1,4 +1,5 @@
 @import '../../styles/Type';
+.other-presentation {
 .card {
     background: #fff;
     border-radius: 0.5em;
@@ -77,4 +78,5 @@
         grid-row: button / span 1;
         grid-column: text / span 1;
     }
+}
 }
