@@ -11,7 +11,7 @@ export default class TableLayout extends GenericComponent {
             <tr className="nav">
               <td colSpan="2" align="right">
               <table>
-                <tr><td><a href="">link</a></td><td><a href="">link</a></td><td><a href="">link</a></td><td><a href="">link</a></td><td><a href="">link</a></td></tr>
+                <tr><td><a href="#">link</a></td><td><a href="#">link</a></td><td><a href="#">link</a></td><td><a href="#">link</a></td><td><a href="#">link</a></td></tr>
               </table>
               </td>
             </tr>
@@ -19,19 +19,19 @@ export default class TableLayout extends GenericComponent {
               <td className="sidenav">
                 <table>
                   <tr>
-                    <td><a href="">link</a></td>
+                    <td><a href="#">link</a></td>
                   </tr>
                   <tr>
-                    <td><a href="">link</a></td>
+                    <td><a href="#">link</a></td>
                   </tr>
                   <tr>
-                    <td><a href="">link</a></td>
+                    <td><a href="#">link</a></td>
                   </tr>
                   <tr>
-                    <td><a href="">link</a></td>
+                    <td><a href="#">link</a></td>
                   </tr>
                   <tr>
-                    <td><a href="">link</a></td>
+                    <td><a href="#">link</a></td>
                   </tr>
                 </table>
               </td>

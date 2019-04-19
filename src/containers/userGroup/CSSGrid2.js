@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import GenericComponent from '../../components/GenericComponent.js';
-import { AppRoutes } from '../../Constants';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { AppRoutes } from '../../Constants';
+import GenericComponent from '../../components/GenericComponent.js';
+import ScrollToTopOnMount from '../../components/ScrollToTopOnMount.js';
 import Example1CSSGrid from '../grid/Example1CSSGrid';
 import bikeImg1 from '../../assets/img/jonny-kennaugh-697578-unsplash.jpg';
 import bikeImg2 from '../../assets/img/paul-green-38404-unsplash.jpg';
@@ -12,6 +13,7 @@ export default class CSSGrid2 extends GenericComponent {
     return (
       <div className='cssgrid'>
 
+        <ScrollToTopOnMount />
         <section>
           <h1>Defining a Grid Explicitly</h1>
         </section>
@@ -31,9 +33,9 @@ export default class CSSGrid2 extends GenericComponent {
               <li>grid-template-rows</li>
               <li>grid-auto-columns</li>
               <li>grid-auto-rows</li>
-            </ul><br/>
-            <p style={{'display':'none'}}>Properties with <strong>-auto-</strong> apply to all tracks on the specified dimension and is also affected by the grid<strong>-auto-</strong>flow property.</p>
-            <p style={{'display':'none'}}>Properties with <strong>-template-</strong> apply to the first X tracks on the specified dimension and have higher priority than its -auto- counterpart.</p>
+            </ul><br />
+            <p style={{ 'display': 'none' }}>Properties with <strong>-auto-</strong> apply to all tracks on the specified dimension and is also affected by the grid<strong>-auto-</strong>flow property.</p>
+            <p style={{ 'display': 'none' }}>Properties with <strong>-template-</strong> apply to the first X tracks on the specified dimension and have higher priority than its -auto- counterpart.</p>
           </aside>
           <div className="grid grid0">
             <div></div>

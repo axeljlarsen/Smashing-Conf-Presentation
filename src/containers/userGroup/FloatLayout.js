@@ -11,38 +11,38 @@ export default class FloatLayout extends GenericComponent {
             <div className="header">
               <ul className="nav">
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
               </ul>
             </div>
             <div className="main">
               <ul className="sidenav">
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
               </ul>
               <div className="content">MAIN CONTENT</div>

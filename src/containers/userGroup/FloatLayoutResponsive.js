@@ -11,19 +11,19 @@ export default class FloatLayoutResponsive extends GenericComponent {
             <div className="header">
               <ul className="nav">
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
               </ul>
             </div>
@@ -31,19 +31,19 @@ export default class FloatLayoutResponsive extends GenericComponent {
               <div className="content">MAIN CONTENT</div>
               <ul className="sidenav">
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
                 <li>
-                  <a href="">link</a>
+                  <a href="#">link</a>
                 </li>
               </ul>
             </div>

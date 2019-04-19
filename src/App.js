@@ -40,34 +40,19 @@ class App extends Component {
     const FluidCards = <FluidTypeCards fluidGrid={true} fluidType={true} />;
     const StaticGridFluidCards = <FluidTypeCards fluidGrid={false} fluidType={true} />;
     const header = <header>
-      <a href={AppRoutes.Home}>Home</a>
-      <a href={AppRoutes.CSSGrid}>CSS Grid</a>
-      <a href={AppRoutes.FluidType}>Fluid Typography</a>
-      <a href={AppRoutes.CustomVariables}>Custom Variables</a>
+      <Link to={AppRoutes.Home}>Home</Link>
+      <Link to={AppRoutes.CSSGrid}>CSS Grid</Link>
+      <Link to={AppRoutes.FluidType}>Fluid Typography</Link>
+      <Link to={AppRoutes.CustomVariables}>Custom Variables</Link>
     </header>;
     return (
       <div className="App mod-scale-fluid">
 
         <BrowserRouter>
           <Switch>
-            <Route path={AppRoutes.CustomVariables} exact component={SectionCustomVariables} />
-            <Route path={AppRoutes.FluidType} exact component={FluidType} />
-            <Route path={AppRoutes.FluidTypeStaticCards} exact component={() => StaticCards} />
-            <Route path={AppRoutes.FluidTypeFluidCards} exact component={() => FluidCards} />
-            <Route path={AppRoutes.StaticGridFluidCards} exact component={() => StaticGridFluidCards} />
-            <Route path={AppRoutes.CSSGrid} exact component={CSSGrid} />
-            <Route path={AppRoutes.CSSGridExample1} exact component={Example1CSSGrid} />
-            <Route path={AppRoutes.Home} exact component={CSSGrid1} />
-            <Route path={AppRoutes.UserGroup} exact component={UserGroup} />
-            <Route path={AppRoutes.TableLayout} exact component={TableLayout} />
-            <Route path={AppRoutes.FlashLayout} exact component={FlashLayout} />
-            <Route path={AppRoutes.FloatLayout} exact component={FloatLayout} />
-            <Route path={AppRoutes.FloatLayoutResponsive} exact component={FloatLayoutResponsive} />
-            <Route path={AppRoutes.FlexBox} exact component={UserGroup} />
             <Route path={AppRoutes.CSSGrid_UG1} exact component={CSSGrid1} />
             <Route path={AppRoutes.CSSGrid_UG2} exact component={CSSGrid2} />
-            <Route path={AppRoutes.CSSGrid_UG3} exact component={CSSGrid3} />
-            <Route path={AppRoutes.CSSGrid_UG4} exact component={UserGroup} />
+            <Route path={AppRoutes.Home} exact component={CSSGrid1} />
           </Switch>
         </BrowserRouter>
       </div>
