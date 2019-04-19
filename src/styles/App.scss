@@ -425,11 +425,11 @@ details {
 }
 
 .cssgrid {
-    $gridsize: 10rem;
+    $gridsize: 6rem;
 
     .grid {
         display: grid;
-        grid-gap: 1rem;
+        grid-gap: $gridsize/10;
         border: 0.1rem dashed rgba(0, 0, 0, 0.5);
 
         >* {
@@ -440,7 +440,7 @@ details {
     }
 
     .grid0 {
-        grid-template-columns: 10rem 10rem 10rem 10rem;
+        grid-template-columns: $gridsize $gridsize $gridsize $gridsize;
     }
 
     .grid1 {
@@ -460,7 +460,7 @@ details {
     .grid5,
     .grid6 {
         grid-template-columns: repeat(4, $gridsize);
-        min-height: 30rem;
+        min-height: $gridsize * 3;
     }
 
     .grid4,
@@ -488,40 +488,47 @@ details {
 
         }
     }
-    .grid7 > div:nth-child(4),
-    .grid10 > div:nth-child(3) {
+
+    .grid7>div:nth-child(4),
+    .grid10>div:nth-child(3) {
         grid-row: span 2;
     }
+
     .grid8 {
-        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr) minmax(10rem, 2fr));
+        grid-template-columns: repeat(auto-fit, minmax($gridsize, 1fr) minmax($gridsize, 2fr));
     }
 
     .grid9 {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-        > * {
+        grid-template-columns: repeat(auto-fit, minmax($gridsize*2, 1fr));
+
+        >* {
             border: none;
         }
+
         .card,
         .card2 {
             display: grid;
-            grid-template-columns: 6rem 1fr 6rem;
-            
-            .titles, 
+            grid-template-columns: $gridsize*.6 1fr $gridsize*.6;
+
+            .titles,
             .actions {
                 grid-column: span 2;
             }
+
             .pic-main,
             .desc {
                 grid-column: span 3;
             }
+
             .actions-icons {
                 display: flex;
                 justify-content: flex-end;
             }
         }
 
-        .card2 {            
+        .card2 {
+
             .titles,
             .actions-icons {
                 grid-column: 2 / span 2;
@@ -542,7 +549,7 @@ details {
 
             .pic-main,
             .desc {
-                margin-top: 1rem;
+                margin-top: $gridsize/10;
             }
 
             .pic-ava,
@@ -550,14 +557,15 @@ details {
             .subtitle,
             .desc,
             .actions {
-                margin-left: 1rem;
+                margin-left: $gridsize/10;
             }
+
             .title,
             .subtitle,
             .desc,
-            .actions > *,
-            .actions-icons > * {
-                margin-right: 1rem;
+            .actions>*,
+            .actions-icons>* {
+                margin-right: $gridsize/10;
             }
 
             .subtitle,
@@ -570,12 +578,13 @@ details {
             }
 
             .pic-ava {
-                $asize: 5rem;
+                $asize: $gridsize/2;
                 max-height: $asize;
                 clip-path: circle($asize * 0.5);
             }
+
             .action-icons {
-                
+
                 padding-right: 1em;
             }
         }
@@ -605,6 +614,7 @@ details {
         background: adjust-hue($highlight, 160%);
         color: $light;
     }
+
     .highlight4 {
         background: adjust-hue($highlight, 240%);
         color: $light;
@@ -633,6 +643,7 @@ details {
             color: $text;
         }
     }
+
     .highlight4-dot {
         color: adjust-hue($highlight, 240%);
 
@@ -640,4 +651,44 @@ details {
             color: $text;
         }
     }
+}
+
+.bs-grid {
+    $cols: 12;
+    $border: 0.1rem;
+    $pad: 1rem;
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat($cols, auto);
+        grid-gap: $pad;
+        padding: $pad;
+        border: $border dashed rgba(0, 0, 0, 0.1);
+    }
+
+    [class*="col-"] {
+        min-height: 10rem;
+        border: $border solid rgba(0, 0, 0, 0.1);
+    }
+
+    //function that defines our screen specific col sizes within a media query.
+    @mixin bsgrid($name, $bp) {
+        //@media screen and (min-width: 40em)
+        @media screen and (min-width: $bp) {
+            //loop 1 through number-of-columns
+            @for $i from 1 through $cols {
+                //write our selector using passed in name and current index of our loop e.g. .col-sm-5
+                .#{$name}-#{$i} {
+                    //grid-column: span 5
+                    grid-column: span #{$i};
+                }
+            }
+        }
+    }
+
+    @include bsgrid('col','0');
+    @include bsgrid('col-sm','40em');
+    @include bsgrid('col-md','60em');
+    @include bsgrid('col-lg','80em');
+
 }

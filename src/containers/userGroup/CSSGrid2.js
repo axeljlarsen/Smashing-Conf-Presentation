@@ -481,6 +481,38 @@ export default class CSSGrid2 extends GenericComponent {
           <Example1CSSGrid />
         </section>
 
+        <section>
+          <div className="bs-grid">
+            <div className="container">
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3"></div>
+              
+              <div className="col-8 col-sm-6 col-md-4 col-lg-3"></div>
+              <div className="col-4 col-sm-6 col-md-4 col-lg-3"></div>
+
+              
+              <div className="col-2 col-sm-6"></div>
+              <div className="col-7 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+
+              
+              <div className="col-3 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+
+              
+              <div className="col-1 col-sm-6"></div>
+              <div className="col-2 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+              <div className="col-2 col-sm-6"></div>
+              <div className="col-3 col-sm-6"></div>
+              <div className="col-1 col-sm-6"></div>
+
+            </div>
+          </div>
+        </section>
+       
+
         {this.props.children}
       </div>
     );
