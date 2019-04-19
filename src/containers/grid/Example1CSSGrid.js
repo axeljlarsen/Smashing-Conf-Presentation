@@ -14,114 +14,121 @@ import bikeImg2 from '../../assets/img/paul-green-38404-unsplash.jpg';
 import bikeImg3 from '../../assets/img/patrick-hendry-464055-unsplash.jpg';
 
 export default class Example1CSSGrid extends GenericComponent {
-    constructor(props) {
-        super(props);
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            isLoading: true,
-            steps: [CSSGridExample1Steps.Bootstrap3, CSSGridExample1Steps.Grid]
-        };
-    }
+    this.state = {
+      isLoading: true,
+      steps: [CSSGridExample1Steps.Bootstrap3, CSSGridExample1Steps.Grid]
+    };
+  }
 
-    onDemoFilterChange = (steps) => {
-        this.setState({
-            steps: steps
-        });
-    }
+  onDemoFilterChange = (steps) => {
+    this.setState({
+      steps: steps
+    });
+  }
 
-    getStepUtilClass = (step) => {
-        if (this.state.steps.includes(step))
-            return '';
-        else
-            return 'hide';
-    }
+  getStepUtilClass = (step) => {
+    if (this.state.steps.includes(step))
+      return '';
+    else
+      return 'hide';
+  }
 
-    render() {
-        const gridClass = `bg-silver`;
-        const content = [
-            <div>
-                <FontAwesomeIcon icon={['fal', 'bicycle']} size="4x" />
-                <h2>Ride for fun</h2>
-                <p>
-                    Quisque rutrum sem lorem, ac accumsan arcu feugiat vitae. In venenatis sem eu nisi tincidunt tincidunt.
+  render() {
+    const gridClass = `bg-silver`;
+    const content = [
+      <div>
+        <FontAwesomeIcon icon={['fal', 'bicycle']} size="4x" />
+        <h2>Ride for fun</h2>
+        <p>
+          Quisque rutrum sem lorem, ac accumsan arcu feugiat vitae. In venenatis sem eu nisi tincidunt tincidunt.
                 </p>
-                <p><a className="btn btn-primary btn-lg" href="#" role="button">Start tracking</a></p>
-            </div>,
-            <div>
-                <FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" />
-                <h2>Compete</h2>
-                <p>Pellentesque ullamcorper, quam at tempus pulvinar, lorem purus laoreet ex, a porttitor lacus quam id ligula. Integer sed ultricies nisi.</p>
-                <p><a className="btn btn-primary btn-lg" href="#" role="button">Register</a></p>
-            </div>
-        ];
+        <p><a className="btn btn-primary btn-lg" href="#" role="button">Start tracking</a></p>
+      </div>,
+      <div>
+        <FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" />
+        <h2>Compete</h2>
+        <p>Pellentesque ullamcorper, quam at tempus pulvinar, lorem purus laoreet ex, a porttitor lacus quam id ligula. Integer sed ultricies nisi.</p>
+        <p><a className="btn btn-primary btn-lg" href="#" role="button">Register</a></p>
+      </div>
+    ];
 
-        return (
-            <div className={gridClass}>
-                <div className={`grid-code`}>
-                    <div className={`bootstrap-3 ${this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}`}>
-                        <Container fluid>
-                            <Row className="weather-card">
-                                <Col className="col-xs-12 location">Hong Kong</Col>
-                                <Col className="col-xs-12 time">Mon 12:30 PM Mostly Sunny</Col>
-                                <Col xs="8" className="col-xs-8 temp">23<sup>&deg; C</sup></Col>
-                                <Col xs="4" className="col-xs-4 icon--lg"><FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" /></Col>
-                                <Col xs="6" className="col-xs-6 perc-wind"><FontAwesomeIcon icon={['fal', 'cloud-rain']} />24% Precepitation</Col>
-                                <Col xs="6" className="col-xs-6 perc-wind"><FontAwesomeIcon icon={['fal', 'wind']} />24kmph Winds</Col>
-                                <Col className="col-xs-12 week">
-                                    <Row>
-                                        <Col className="col-xs-7 day">Tuesday</Col>
-                                        <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="col-xs-7 day">Wednesday</Col>
-                                        <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="col-xs-7 day">Thursday</Col>
-                                        <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'thunderstorm']} />24&deg;/12&deg;</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="col-xs-7 day">Friday</Col>
-                                        <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'cloud-sun-rain']} />24&deg;/12&deg;</Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="col-xs-7 day">Saturday</Col>
-                                        <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
-                                    </Row>
-                                </Col>
-                                <Col className="col-xs-12 footer">Collapse</Col>
-                            </Row>
-                        </Container>
-                    </div>
-                    <div className={`weather-card grid-example ${this.getStepUtilClass(CSSGridExample1Steps.Grid)}`}>
-                        <div className="location">Hong Kong</div>
-                        <div className="time">Mon 12:30 PM Mostly Sunny</div>
-                        <div className="temp">23<sup>&deg; C</sup></div>
-                        <div className="icon--lg">
-                            <FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" />
-                        </div>
-                        <div className="perc-wind"><FontAwesomeIcon icon={['fal', 'cloud-rain']} />24% Precepitation</div>
-                        <div className="perc-wind"><FontAwesomeIcon icon={['fal', 'wind']} />24kmph Winds</div>
-                        <div className="week">
-                            <div className="day">Tuesday</div>
-                            <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
-                            <div className="day">Wednesday</div>
-                            <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
-                            <div className="day">Thursday</div>
-                            <div className="high-low"><FontAwesomeIcon icon={['fal', 'thunderstorm']} />24&deg;/12&deg;</div>
-                            <div className="day">Friday</div>
-                            <div className="high-low"><FontAwesomeIcon icon={['fal', 'cloud-sun-rain']} />24&deg;/12&deg;</div>
-                            <div className="day">Saturday</div>
-                            <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
-                        </div>
-                        <div className="footer">Collapse</div>
-                    </div>
-                </div>
-                <div className={`grid-code`}>
-                    <div className={this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}>
-                        <pre>
-                            <code>
-                                {`<div class="container-fluid">
+    return (
+      <section>
+
+        <aside>
+          <p>
+            The example below shows two identical weather cards. The first is laid out using Bootstrap 3's float based grid system; the second uses CSS Grid. Notice that the Bootstrap solution tightly couples the presentation of the content to the HTML through the use of &quot;helper&quot; classes and nesting {`<div>`} tags for the sole purpose of accomplishing layout. In addition, utilizing Bootstrap (or an altenative framework) often loads a significant amount of unused CSS to the page. In comparison, CSS Grid can accomplish the same layout with less CSS <em>and</em> less HTML.
+          </p>
+        </aside>
+        <div className={gridClass}>
+          <div className={`grid-code`}>
+            <div className={`bootstrap-3 ${this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}`}>
+              <Container fluid>
+                <Row className="weather-card">
+                  <Col className="col-xs-12 location">Hong Kong</Col>
+                  <Col className="col-xs-12 time">Mon 12:30 PM Mostly Sunny</Col>
+                  <Col xs="8" className="col-xs-8 temp">23<sup>&deg; C</sup></Col>
+                  <Col xs="4" className="col-xs-4 icon--lg"><FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" /></Col>
+                  <Col xs="6" className="col-xs-6 perc-wind"><FontAwesomeIcon icon={['fal', 'cloud-rain']} />24% Precepitation</Col>
+                  <Col xs="6" className="col-xs-6 perc-wind"><FontAwesomeIcon icon={['fal', 'wind']} />24kmph Winds</Col>
+                  <Col className="col-xs-12 week">
+                    <Row>
+                      <Col className="col-xs-7 day">Tuesday</Col>
+                      <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-xs-7 day">Wednesday</Col>
+                      <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-xs-7 day">Thursday</Col>
+                      <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'thunderstorm']} />24&deg;/12&deg;</Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-xs-7 day">Friday</Col>
+                      <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'cloud-sun-rain']} />24&deg;/12&deg;</Col>
+                    </Row>
+                    <Row>
+                      <Col className="col-xs-7 day">Saturday</Col>
+                      <Col className="col-xs-5 high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</Col>
+                    </Row>
+                  </Col>
+                  <Col className="col-xs-12 footer">Collapse</Col>
+                </Row>
+              </Container>
+            </div>
+            <div className={`weather-card grid-example ${this.getStepUtilClass(CSSGridExample1Steps.Grid)}`}>
+              <div className="location">Hong Kong</div>
+              <div className="time">Mon 12:30 PM Mostly Sunny</div>
+              <div className="temp">23<sup>&deg; C</sup></div>
+              <div className="icon--lg">
+                <FontAwesomeIcon icon={['fal', 'sun-cloud']} size="4x" />
+              </div>
+              <div className="perc-wind"><FontAwesomeIcon icon={['fal', 'cloud-rain']} />24% Precepitation</div>
+              <div className="perc-wind"><FontAwesomeIcon icon={['fal', 'wind']} />24kmph Winds</div>
+              <div className="week">
+                <div className="day">Tuesday</div>
+                <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
+                <div className="day">Wednesday</div>
+                <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
+                <div className="day">Thursday</div>
+                <div className="high-low"><FontAwesomeIcon icon={['fal', 'thunderstorm']} />24&deg;/12&deg;</div>
+                <div className="day">Friday</div>
+                <div className="high-low"><FontAwesomeIcon icon={['fal', 'cloud-sun-rain']} />24&deg;/12&deg;</div>
+                <div className="day">Saturday</div>
+                <div className="high-low"><FontAwesomeIcon icon={['fal', 'sun-cloud']} />24&deg;/12&deg;</div>
+              </div>
+              <div className="footer">Collapse</div>
+            </div>
+          </div>
+          <div className={`grid-code`}>
+            <div className={this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}>
+              <pre>
+                <code>
+                  {`<div class="container-fluid">
     <div class="weather-card`}<span className="highlight"> row</span>{`">
         <div class="`}<span className="highlight">col-xs-12 </span>{`location">Hong Kong</div>
         <div class="`}<span className="highlight">col-xs-12 </span>{`time">Mon 12:30 PM Mostly Sunny</div>
@@ -154,13 +161,13 @@ export default class Example1CSSGrid extends GenericComponent {
         <div class="`}<span className="highlight">{`col-xs-12 `}</span>{`footer">Collapse</div>
     </div>
 </div>`}
-                            </code>
-                        </pre>
-                    </div>
-                    <div className={this.getStepUtilClass(CSSGridExample1Steps.Grid)}>
-                        <pre>
-                            <code>
-                                {`<div class="weather-card">
+                </code>
+              </pre>
+            </div>
+            <div className={this.getStepUtilClass(CSSGridExample1Steps.Grid)}>
+              <pre>
+                <code>
+                  {`<div class="weather-card">
     <div class="location">Hong Kong</div>
     <div class="time">Mon 12:30 PM Mostly Sunny</div>
     <div class="temp">23<sup>° C</sup></div>
@@ -181,15 +188,15 @@ export default class Example1CSSGrid extends GenericComponent {
     </div>
     <div class="footer">Collapse</div>
 </div>`}
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-                <div className={`grid-code`}>
-                    <div className={this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}>
-                        <pre>
-                            <code>
-                                {`<style>
+                </code>
+              </pre>
+            </div>
+          </div>
+          <div className={`grid-code`}>
+            <div className={this.getStepUtilClass(CSSGridExample1Steps.Bootstrap3)}>
+              <pre>
+                <code>
+                  {`<style>
 .container {
     padding-right: 15px;
     padding-left: 15px;
@@ -957,13 +964,13 @@ export default class Example1CSSGrid extends GenericComponent {
     }
   }
 </style>`}
-                            </code>
-                        </pre>
-                    </div>
-                    <div className={this.getStepUtilClass(CSSGridExample1Steps.Grid)}>
-                        <pre>
-                            <code>
-                                {`<style>
+                </code>
+              </pre>
+            </div>
+            <div className={this.getStepUtilClass(CSSGridExample1Steps.Grid)}>
+              <pre>
+                <code>
+                  {`<style>
 .weather-card {        
     display: grid;
 }
@@ -990,19 +997,20 @@ export default class Example1CSSGrid extends GenericComponent {
     padding-right: 1rem;
 }
 </style>`}
-                            </code>
-                        </pre>
-                    </div>
-                </div>
+                </code>
+              </pre>
             </div>
-        );
-    }
-    oldRender() {
-        return (
-            <Row>
-                <Col sm="12" md={{ size: 6, offset: 3 }}>.col-sm-12 .col-md-6 .offset-md-3</Col>
-                <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
-            </Row>
-        );
-    }
+          </div>
+        </div>
+      </section>
+    );
+  }
+  oldRender() {
+    return (
+      <Row>
+        <Col sm="12" md={{ size: 6, offset: 3 }}>.col-sm-12 .col-md-6 .offset-md-3</Col>
+        <Col sm={{ size: 'auto', offset: 1 }}>.col-sm-auto .offset-sm-1</Col>
+      </Row>
+    );
+  }
 }

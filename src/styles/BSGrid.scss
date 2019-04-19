@@ -1,0 +1,41 @@
+
+
+.bs-grid {
+    $cols: 12;
+    $border: 0.1rem;
+    $pad: 1rem;
+
+    .row {
+        display: grid;
+        grid-template-columns: repeat($cols, auto);
+        grid-gap: $pad;
+        padding: $pad;
+        border: $border dashed rgba(0, 0, 0, 0.1);
+    }
+
+    [class*="col-"] {
+        min-height: 10rem;
+        border: $border solid rgba(0, 0, 0, 0.1);
+    }
+
+    //function that defines our screen specific col sizes within a media query.
+    @mixin bsgrid($name, $bp) {
+        //@media screen and (min-width: 40em)
+        @media screen and (min-width: $bp) {
+            //loop 1 through number-of-columns
+            @for $i from 1 through $cols {
+                //write our selector using passed in name and current index of our loop e.g. .col-sm-5
+                .#{$name}-#{$i} {
+                    //grid-column: span 5
+                    grid-column: span #{$i};
+                }
+            }
+        }
+    }
+
+    @include bsgrid('col','0');
+    @include bsgrid('col-sm','40em');
+    @include bsgrid('col-md','60em');
+    @include bsgrid('col-lg','80em');
+
+}

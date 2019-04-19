@@ -34,8 +34,8 @@ export default class CSSGrid2 extends GenericComponent {
               <li>grid-auto-columns</li>
               <li>grid-auto-rows</li>
             </ul><br />
-            <p style={{ 'display': 'none' }}>Properties with <strong>-auto-</strong> apply to all tracks on the specified dimension and is also affected by the grid<strong>-auto-</strong>flow property.</p>
-            <p style={{ 'display': 'none' }}>Properties with <strong>-template-</strong> apply to the first X tracks on the specified dimension and have higher priority than its -auto- counterpart.</p>
+            <p style={{ 'display': 'none' }}>Properties with <i>-auto-</i> apply to all tracks on the specified dimension and is also affected by the grid<i>-auto-</i>flow property.</p>
+            <p style={{ 'display': 'none' }}>Properties with <i>-template-</i> apply to the first X tracks on the specified dimension and have higher priority than its -auto- counterpart.</p>
           </aside>
           <div className="grid grid0">
             <div></div>
@@ -55,8 +55,8 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>The <strong>repeat(count, size)</strong> CSS function lets you define a pattern for your grid tracks of the specified dimension.</p>
-            <p><strong>auto-fill</strong> will fill the grid container with as many tracks as possible on the specified dimension.</p>
+            <p>The <i><b>repeat(count, size)</b> </i> CSS function lets you define a pattern for your grid tracks of the specified dimension.</p>
+            <p><i><b>auto-fill</b></i> will fill the grid container with as many tracks as possible on the specified dimension.</p>
           </aside>
           <div className="grid grid1">
             <div></div>
@@ -76,9 +76,8 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p><strong>auto-fit</strong> will fill the grid container with as many tracks as possible and then fit the tracks to the container by proportionally distributing the remaining space to each track on the specified dimension.</p>
-            <p>The <strong>fr</strong> unit stands for fraction.</p>
-            <p>Tracks defined with an fr unit will proportionally take up the remaining space of the grid.</p>
+            <p><i><b>auto-fit</b></i> will fill the grid container with as many tracks as possible and then fit the tracks to the container by proportionally distributing the remaining space to each track on the specified dimension.</p>
+            <p>The <i><b>fr</b></i> unit stands for fraction. Tracks defined with an <i>fr</i> unit will proportionally take up the remaining space of the grid.</p>
           </aside>
           <div className="grid grid2">
             <div></div>
@@ -123,7 +122,7 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>The <strong>align-items</strong> property is <strong>stretch</strong> by default. So grid items will stretch to fill the block dimension (row).</p>
+            <p>The <i><b>align-items</b></i> property is <b>stretch</b> by default. So grid items will stretch to fill the block dimension (row).</p>
           </aside>
           <div className="grid grid3">
             <div></div>
@@ -145,8 +144,8 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>CSS properties beginning with <strong>align-</strong> affect the <strong>block</strong> dimension (in English the block dimension is the vertical axis)</p>
-            <p>CSS properties ending in <strong>-items</strong> and <strong>-self</strong> affect the alignment of the <strong>item(s)</strong> within their track.</p>
+            <p>CSS properties beginning with <i><b>align-</b></i> affect the <b>block</b> dimension (in English the block dimension is the vertical axis)</p>
+            <p>CSS properties ending in <i><b>-items</b></i> and <i><b>-self</b></i> affect the alignment of the <b>item(s)</b> within their track.</p>
           </aside>
           <div className="grid grid4">
             <div></div>
@@ -168,8 +167,8 @@ export default class CSSGrid2 extends GenericComponent {
 }`}</pre>
           </code>
           <aside>
-            <p>CSS properties beginning with <strong>justify-</strong> affect the <strong>inline</strong> dimension (in English the inline dimension is the horizontal axis)</p>
-            <p>CSS properties ending in <strong>-content</strong> affect the placement of the tracks within the grid.</p>
+            <p>CSS properties beginning with <i><b>justify-</b></i> affect the <b>inline</b> dimension (in English the inline dimension is the horizontal axis)</p>
+            <p>CSS properties ending in <i><b>-content</b></i> affect the placement of the tracks within the grid.</p>
           </aside>
           <div className="grid grid5">
             <div></div>
@@ -227,19 +226,19 @@ export default class CSSGrid2 extends GenericComponent {
           <aside>
             <ul>
               <li>
-                <p>Notice that our grid container doesn't have <strong>grid-template-columns</strong> defined and yet our grid has 3 columns. This is because our second grid item has <strong>grid-column-end: 4</strong> so the browser infered there would be 4 inline track lines i.e. 3 columns.</p>
+                <p>Notice that our grid container doesn't have <i><b>grid-template-columns</b></i> defined and yet our grid has 3 columns. This is because our second grid item has <b>grid-column-end: 4</b> so the browser infered there would be 4 inline track lines i.e. 3 columns.</p>
               </li>
               <li className="highlight-dot">
                 <p>A grid item can also be a grid container.</p>
               </li>
               <li className="highlight2-dot">
-                <p>The <strong>place-content</strong> property value applies to justify-content and align-content simultaneously.</p>
+                <p>The <i><b>place-content</b></i> property value applies to justify-content and align-content simultaneously.</p>
               </li>
               <li className="highlight3-dot">
-                <p>Individual items within a grid container can be repositioned and sized in multiple ways. One way is to use the <strong>grid-area</strong> property.</p>
+                <p>Individual items within a grid container can be repositioned and sized in multiple ways. One way is to use the <i><b>grid-area</b></i> property.</p>
               </li>
               <li className="highlight4-dot">
-                <p>Individual items can <strong>span</strong> multiple tracks without defining their position.</p>
+                <p>Individual items can <i><b>span</b></i> multiple tracks without defining their position.</p>
               </li>
             </ul>
           </aside>
@@ -285,6 +284,9 @@ export default class CSSGrid2 extends GenericComponent {
           <h1>Examples</h1>
         </section>
         <section>
+          <aside>
+            <p>The example below shows 3 standard cards all using CSS Grid. The first contains an avatar image and set of actions that the second and third card lack. By <em>slightly</em> altering the second card&apos;s CSS, we can match the position of the titles and icons to the first card. Without that change, we get the result of the third card where the titles and icons are positioned on the far left.</p>
+          </aside>
           <div className="grid grid9">
             <div className="card">
               <img className="pic-ava" src={bikeImg1} />
@@ -414,7 +416,7 @@ export default class CSSGrid2 extends GenericComponent {
             <code>
               <pre>{`.card {
   display: grid;
-  grid-template-columns: 6rem 1fr 6rem;
+  grid-template-columns: 4.2rem 1fr auto;
 }
 
 .card .titles,
@@ -435,7 +437,7 @@ export default class CSSGrid2 extends GenericComponent {
             <code>
               <pre>{`.card {
   display: grid;
-  grid-template-columns: 6rem 1fr 6rem;
+  grid-template-columns: 4.2rem 1fr auto;
 }
 
 .card .titles,
@@ -456,7 +458,7 @@ export default class CSSGrid2 extends GenericComponent {
             <code>
               <pre>{`.card {
   display: grid;
-  grid-template-columns: 6rem 1fr 6rem;
+  grid-template-columns: 4.2rem 1fr auto;
 }
 
 .card .titles,
@@ -477,41 +479,220 @@ export default class CSSGrid2 extends GenericComponent {
           </div>
         </section>
 
-        <section>
-          <Example1CSSGrid />
-        </section>
+        <Example1CSSGrid />
 
-        <section>
+        <section style={{ 'display': 'none' }}>
+
+          <aside>
+            <p>You can also use CSS Grid to replicate a bootstrap layout by using grid-column: span X; where X is the size of the column. While this approach still produces a significant amount of CSS, it's certainly easier to read and produces less caveats in comparison to Bootstrap 3&apos;s implementation.</p>
+            <p>Bootstrap 4 switched its implementation of a grid layout to use flexbox instead of float: left. I don&apos;t know why flexbox was chosen over grid but I&apos;d guess it&apos;s because of flexbox&apos;s <em>slight</em> lead in browser support and/or a limited understanding of how grid works or what it&apos;s capable of. Flexbox only allows you to control a single dimension (horizontal or vertical) which means that Bootstrap's new "grid" is needlessly limited.</p>
+          </aside>
           <div className="bs-grid">
-            <div className="container">
-              <div className="col-12 col-sm-6 col-md-4 col-lg-3"></div>
-              
-              <div className="col-8 col-sm-6 col-md-4 col-lg-3"></div>
-              <div className="col-4 col-sm-6 col-md-4 col-lg-3"></div>
-
-              
-              <div className="col-2 col-sm-6"></div>
-              <div className="col-7 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-
-              
-              <div className="col-3 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-
-              
-              <div className="col-1 col-sm-6"></div>
-              <div className="col-2 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-              <div className="col-2 col-sm-6"></div>
-              <div className="col-3 col-sm-6"></div>
-              <div className="col-1 col-sm-6"></div>
-
+            <div className="row">
+              <div className="col-12 col-sm-6 col-md-4 col-lg-3">
+                <ul>
+                  <li>xs: 12</li>
+                  <li>sm: 6</li>
+                  <li>md: 4</li>
+                  <li>lg: 3</li>
+                </ul>
+              </div>
+              <div className="col-8 col-sm-6 col-md-4 col-lg-3">
+                <ul>
+                  <li>xs: 8</li>
+                  <li>sm: 6</li>
+                  <li>md: 4</li>
+                  <li>lg: 3</li>
+                </ul>
+              </div>
+              <div className="col-4 col-sm-6 col-md-4 col-lg-3">
+                <ul>
+                  <li>xs: 4</li>
+                  <li>sm: 6</li>
+                  <li>md: 4</li>
+                  <li>lg: 3</li>
+                </ul>
+              </div>
+              <div className="col-12 col-sm-6 col-lg-3">
+                <ul>
+                  <li>xs: 12</li>
+                  <li>sm: 6</li>
+                  <li>md: </li>
+                  <li>lg: 3</li>
+                </ul>
+              </div>
             </div>
           </div>
+          <div className="grid-code">
+            <code>
+              <pre>{`<div className="row">
+  <div className="col-12 col-sm-6 col-md-4 col-lg-3">...</div>              
+  <div className="col-8 col-sm-6 col-md-4 col-lg-3">...</div>
+  <div className="col-4 col-sm-6 col-md-4 col-lg-3">...</div>              
+  <div className="col-12 col-sm-6 col-lg-3">...</div>
+</div>`}</pre>
+            </code>
+            <code>
+              <pre>{`.grid .row {
+  display: grid;
+  grid-template-columns: repeat(12, auto);
+  grid-gap: 1rem;
+}
+@media screen and (min-width: 0) {
+  .grid .col-1 {
+      grid-column: span 1;
+  }
+  .grid .col-2 {
+      grid-column: span 2;
+  }
+  .grid .col-3 {
+      grid-column: span 3;
+  }
+  .grid .col-4 {
+      grid-column: span 4;
+  }
+  .grid .col-5 {
+      grid-column: span 5;
+  }
+  .grid .col-6 {
+      grid-column: span 6;
+  }
+  .grid .col-7 {
+      grid-column: span 7;
+  }
+  .grid .col-8 {
+      grid-column: span 8;
+  }
+  .grid .col-9 {
+      grid-column: span 9;
+  }
+  .grid .col-10 {
+      grid-column: span 10;
+  }
+  .grid .col-11 {
+      grid-column: span 11;
+  }
+  .grid .col-12 {
+      grid-column: span 12;
+  }
+}
+@media screen and (min-width: 40em) {
+  .grid .col-sm-1 {
+      grid-column: span 1;
+  }
+  .grid .col-sm-2 {
+      grid-column: span 2;
+  }
+  .grid .col-sm-3 {
+      grid-column: span 3;
+  }
+  .grid .col-sm-4 {
+      grid-column: span 4;
+  }
+  .grid .col-sm-5 {
+      grid-column: span 5;
+  }
+  .grid .col-sm-6 {
+      grid-column: span 6;
+  }
+  .grid .col-sm-7 {
+      grid-column: span 7;
+  }
+  .grid .col-sm-8 {
+      grid-column: span 8;
+  }
+  .grid .col-sm-9 {
+      grid-column: span 9;
+  }
+  .grid .col-sm-10 {
+      grid-column: span 10;
+  }
+  .grid .col-sm-11 {
+      grid-column: span 11;
+  }
+  .grid .col-sm-12 {
+      grid-column: span 12;
+  }
+}
+@media screen and (min-width: 60em) {
+  .grid .col-md-1 {
+      grid-column: span 1;
+  }
+  .grid .col-md-2 {
+      grid-column: span 2;
+  }
+  .grid .col-md-3 {
+      grid-column: span 3;
+  }
+  .grid .col-md-4 {
+      grid-column: span 4;
+  }
+  .grid .col-md-5 {
+      grid-column: span 5;
+  }
+  .grid .col-md-6 {
+      grid-column: span 6;
+  }
+  .grid .col-md-7 {
+      grid-column: span 7;
+  }
+  .grid .col-md-8 {
+      grid-column: span 8;
+  }
+  .grid .col-md-9 {
+      grid-column: span 9;
+  }
+  .grid .col-md-10 {
+      grid-column: span 10;
+  }
+  .grid .col-md-11 {
+      grid-column: span 11;
+  }
+  .grid .col-md-12 {
+      grid-column: span 12;
+  }
+}
+@media screen and (min-width: 80em) {
+  .grid .col-lg-1 {
+      grid-column: span 1;
+  }
+  .grid .col-lg-2 {
+      grid-column: span 2;
+  }
+  .grid .col-lg-3 {
+      grid-column: span 3;
+  }
+  .grid .col-lg-4 {
+      grid-column: span 4;
+  }
+  .grid .col-lg-5 {
+      grid-column: span 5;
+  }
+  .grid .col-lg-6 {
+      grid-column: span 6;
+  }
+  .grid .col-lg-7 {
+      grid-column: span 7;
+  }
+  .grid .col-lg-8 {
+      grid-column: span 8;
+  }
+  .grid .col-lg-9 {
+      grid-column: span 9;
+  }
+  .grid .col-lg-10 {
+      grid-column: span 10;
+  }
+  .grid .col-lg-11 {
+      grid-column: span 11;
+  }
+  .grid .col-lg-12 {
+      grid-column: span 12;
+  }
+}`}</pre>
+            </code>
+          </div>
         </section>
-       
 
         {this.props.children}
       </div>

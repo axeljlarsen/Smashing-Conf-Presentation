@@ -1,3 +1,4 @@
+@import 'BSGrid';
 @import 'Type';
 
 $respond: 900px;
@@ -35,6 +36,10 @@ a {
 code {
     overflow: auto;
     display: block;
+}
+
+ul {
+    padding-left: 1.5em;
 }
 
 header a,
@@ -500,7 +505,7 @@ details {
 
     .grid9 {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax($gridsize*2, 1fr));
+        grid-template-columns: repeat(3, auto);
 
         >* {
             border: none;
@@ -509,7 +514,7 @@ details {
         .card,
         .card2 {
             display: grid;
-            grid-template-columns: $gridsize*.6 1fr $gridsize*.6;
+            grid-template-columns: ($gridsize * .7) 1fr auto;
 
             .titles,
             .actions {
@@ -556,7 +561,8 @@ details {
             .title,
             .subtitle,
             .desc,
-            .actions {
+            .actions,
+            .actions-icons {
                 margin-left: $gridsize/10;
             }
 
@@ -651,44 +657,4 @@ details {
             color: $text;
         }
     }
-}
-
-.bs-grid {
-    $cols: 12;
-    $border: 0.1rem;
-    $pad: 1rem;
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat($cols, auto);
-        grid-gap: $pad;
-        padding: $pad;
-        border: $border dashed rgba(0, 0, 0, 0.1);
-    }
-
-    [class*="col-"] {
-        min-height: 10rem;
-        border: $border solid rgba(0, 0, 0, 0.1);
-    }
-
-    //function that defines our screen specific col sizes within a media query.
-    @mixin bsgrid($name, $bp) {
-        //@media screen and (min-width: 40em)
-        @media screen and (min-width: $bp) {
-            //loop 1 through number-of-columns
-            @for $i from 1 through $cols {
-                //write our selector using passed in name and current index of our loop e.g. .col-sm-5
-                .#{$name}-#{$i} {
-                    //grid-column: span 5
-                    grid-column: span #{$i};
-                }
-            }
-        }
-    }
-
-    @include bsgrid('col','0');
-    @include bsgrid('col-sm','40em');
-    @include bsgrid('col-md','60em');
-    @include bsgrid('col-lg','80em');
-
 }
