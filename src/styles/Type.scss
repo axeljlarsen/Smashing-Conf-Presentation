@@ -3,8 +3,8 @@ $c-white: #fff;
 $c-silver: #eee;
 $c-trans-silver: rgba(0, 0, 0, 0.065);
 $c-char: #333;
-$c-pri: #00A7B2;
-$c-sec: #FF7C22;
+$c-pri: #f05a22;
+$c-sec: #8f2d0a;
 $c-ter: #B2500C;
 
 @mixin fluid-type($properties, $min-screen, $max-screen, $min-value, $max-value) {

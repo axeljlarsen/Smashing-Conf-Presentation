@@ -2,11 +2,7 @@
 @import 'Type';
 
 $respond: 900px;
-$charcoal: $c-char;
 $text: rgba(0, 0, 0, 0.83);
-$silver: silver;
-$primary: red;
-$light: white;
 
 * {
     box-sizing: border-box;
@@ -29,8 +25,15 @@ body {
 }
 
 a {
+    padding: 0 0.2em;
+    color: $c-pri;
+    font-weight: bold;
     text-decoration: none;
     cursor: pointer;
+
+    &:hover,&:focus {
+        text-decoration: underline;
+    }
 }
 
 code {
@@ -81,7 +84,12 @@ section {
     @include fluid-type(padding, $viewport-min, $viewport-max, 6.5rem, 5rem);
 
     &:nth-child(2n - 1) {
-        background-color: $c-silver;
+        background-color: $c-pri;
+        color: $c-white;
+
+        a {
+            color: $c-sec;
+        }
     }
 }
 
@@ -275,18 +283,18 @@ a.badge {
     }
 
     .nav {
-        border-bottom: 0.1rem solid $charcoal;
-        color: $light;
-        background: $primary;
+        border-bottom: 0.1rem solid $c-char;
+        color: $c-white;
+        background: $c-pri;
     }
 
     .sidenav {
-        color: $charcoal;
-        background: $silver;
+        color: $c-char;
+        background: $c-silver;
 
         tr {
-            border-bottom: 0.1rem solid $charcoal;
-            border-right: 0.1rem solid $charcoal;
+            border-bottom: 0.1rem solid $c-char;
+            border-right: 0.1rem solid $c-char;
 
             &:last-child {
                 border-bottom: none;
@@ -295,7 +303,7 @@ a.badge {
     }
 
     .footer {
-        border-top: 0.1rem solid $charcoal;
+        border-top: 0.1rem solid $c-char;
     }
 }
 
@@ -376,18 +384,18 @@ a.badge {
     box-shadow: 1em 1em 1em rgba(0, 0, 0, 0.3);
 
     .nav {
-        border-bottom: 0.1rem solid $charcoal;
-        color: $light;
-        background: $primary;
+        border-bottom: 0.1rem solid $c-char;
+        color: $c-white;
+        background: $c-pri;
     }
 
     .sidenav {
-        background: $silver;
-        color: $charcoal;
+        background: $c-silver;
+        color: $c-char;
 
         a {
-            border-bottom: 0.1rem solid $charcoal;
-            border-right: 0.1rem solid $charcoal;
+            border-bottom: 0.1rem solid $c-char;
+            border-right: 0.1rem solid $c-char;
         }
 
         li:last-child a {
@@ -400,7 +408,7 @@ a.badge {
     }
 
     .footer {
-        border-top: 0.1rem solid $charcoal;
+        border-top: 0.1rem solid $c-char;
     }
 }
 
@@ -542,12 +550,17 @@ details {
 
         .card,
         .card2 {
+            color: $text;
             padding: 0.75em 0 1em 0;
             border: none;
             border-radius: 0.4rem;
-            background: $light;
+            background: $c-white;
             box-shadow: 0em 0.5em 0.5em rgba(0, 0, 0, 0.16);
 
+            a {
+                color: $c-pri;
+            }
+            
             img {
                 max-width: 100%
             }
@@ -602,7 +615,7 @@ details {
         margin-bottom: 2em;
     }
 
-    $highlight: yellow;
+    $highlight: #0096f5;// rgba(22, 21, 21, 0.21);
 
     .strike {
         text-decoration: line-through;
@@ -614,16 +627,16 @@ details {
 
     .highlight2 {
         background: adjust-hue($highlight, 80%);
+        color: $c-white;
     }
 
     .highlight3 {
         background: adjust-hue($highlight, 160%);
-        color: $light;
+        color: $c-white;
     }
 
     .highlight4 {
         background: adjust-hue($highlight, 240%);
-        color: $light;
     }
 
     .highlight-dot {
